@@ -1,0 +1,153 @@
+body {
+  background-color: rgb(204, 200, 200);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  width: 700px;
+  height: 100vh;
+  position: relative;
+}
+
+#header {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(107, 41, 41);
+  border-bottom: 2px solid yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+
+#count-box {
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: rgb(47, 45, 45);
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 125px;
+  display: flex;
+  justify-content: space-evenly;
+  border: 0;
+}
+
+#rules-content {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  margin-top: 100px;
+  z-index: 1;
+  border: 2px solid yellow;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgb(204, 200, 200);
+}
+
+#rules-close {
+  display: flex;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border: 1px solid black;
+  background-color: rgb(107, 41, 41);
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
+  color: white;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#table {
+  background-color: rgb(25, 110, 25);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.card {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 100px;
+  width: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#top-left-number {
+  top: 4px;
+  left: 4px;
+}
+
+#center-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 40px;
+  height: 60px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#bottom-right-number {
+  bottom: 4px;
+  right: 4px;
+}
+
+#top-left-number, #bottom-right-number {
+  position: absolute;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+#hit {
+  color: white;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: rgb(47, 45, 45);
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+#rules {
+  color: white;
+  font-size: 18px;
+  margin-left: 20px;
+  background-color: rgb(47, 45, 45);
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  #container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #header {
+    width: 100%;
+    height: 25px;
+    background-color: rgb(178, 178, 249);
+    border-bottom: 2px solid yellow;
+  }
+}
