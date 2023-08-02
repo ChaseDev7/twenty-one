@@ -81,16 +81,22 @@ const cardsArray = [];
 hitButton.addEventListener("click", addCount);
 
 function addCount() {
+  const newCard = cards[(Math.floor(Math.random() * cards.length))];
   counter.textContent = 0;
   card.style.display = "flex";
-  cardsArray.push(card);
-
-  const newCard = cards[(Math.floor(Math.random() * cards.length))];
-  console.log(newCard.name);
+  cardsArray.push(newCard.value);
 
   topLeftNumber.textContent = newCard.name;
   centerNumber.textContent = newCard.name;
   bottomRightNumber.textContent = newCard.name;
+  
+  let total = 0;
+  for (let i of cardsArray) {
+    total += i;
+  }
+
+  console.log(total);
 
   counter.textContent = newCard.value;
+  
 }
