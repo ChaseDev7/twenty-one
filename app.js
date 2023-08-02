@@ -8,6 +8,7 @@ const bottomRightNumber = document.querySelector("#bottom-right-number");
 const rulesContent = document.querySelector("#rules-content");
 const rulesButton = document.querySelector("#rules");
 const rulesClose = document.querySelector("#rules-close");
+const gameWinner = document.querySelector("#game-winner");
 
 rulesClose.addEventListener("click", closeRules);
 
@@ -19,6 +20,13 @@ rulesButton.addEventListener("click", showRules);
 
 function showRules() {
   rulesContent.style.display = "flex";
+}
+
+function showWinner() {
+  gameWinner.style.display = "flex";
+  const winningMessage = document.createElement("p");
+  winningMessage.textContent = "Game Over!";
+  gameWinner.appendChild(winningMessage);
 }
 
 const cards = [
@@ -95,8 +103,9 @@ function addCount() {
     total += i;
   }
 
-  console.log(total);
+  counter.textContent = total;
 
-  counter.textContent = newCard.value;
-  
+  if (total > 21) {
+    showWinner();
+  }
 }
