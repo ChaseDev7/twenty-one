@@ -16,25 +16,32 @@
     <p>The goal of the game is to get as close to 21 without going over.</p>
   </div>
   <div id="game-winner">
-    <p id="winning-message">GAME OVER</p>
+    <p id="winning-message"></p>
     <button id="new-game-button">NEW GAME</button>
   </div>
   <div id="container">
     <div id="header">
-      <div id="count-box">
-        <div id="count">COUNT</div>
-        <div id="counter">0</div>
-      </div>
       <button id="hit">HiT</button>
+      <button id="stay">STAY</button>
       <button id="reset">RESET</button>
       <button id="rules">RULES</button>
     </div>
     <div id="table">
-      <h1>DEALER</h1>
+      <h1>DEALER
+        <div id="dealer-count-box">
+          <div id="dealer-count">COUNT</div>
+          <div id="dealer-counter">0</div>
+        </div>
+      </h1>
       <div id="dealer-container">
         
       </div>
-      <h1>PLAYER</h1>
+      <h1>PLAYER 
+        <div id="count-box">
+          <div id="count">COUNT</div>
+          <div id="counter">0</div>
+        </div>
+      </h1>
       <div id="card-container">
         
       </div>
