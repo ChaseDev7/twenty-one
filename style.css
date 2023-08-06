@@ -181,6 +181,21 @@ body {
   font-family: 'Rowdies', cursive;
 }
 
+#reset {
+  color: white;
+  font-size: 23px;
+  margin-left: 20px;
+  background-color: rgb(47, 45, 45);
+  border-radius: 0 0 10px 10px;
+  padding: 5px 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Rowdies', cursive;
+}
+
 #card-container {
   border: 2px solid rgb(31, 90, 31);
   border-radius: 10px;

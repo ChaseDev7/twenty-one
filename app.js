@@ -2,17 +2,27 @@ const hitButton = document.querySelector("#hit");
 let counter = document.querySelector("#counter");
 const table = document.querySelector("#table");
 const rulesContent = document.querySelector("#rules-content");
+const resetButton = document.querySelector("#reset");
 const rulesButton = document.querySelector("#rules");
 const rulesClose = document.querySelector("#rules-close");
 const gameWinner = document.querySelector("#game-winner");
 const newGame = document.querySelector("#new-game-button");
 const cardContainer = document.querySelector("#card-container");
 
+resetButton.addEventListener("click", resetGame);
+
+function resetGame() {
+  cardsArray.length = 0;
+  counter.textContent = 0;
+  cardContainer.innerHTML = "";
+}
+
 rulesClose.addEventListener("click", closeRules);
 
 function closeRules() {
   rulesContent.style.display = "none";
   hitButton.addEventListener("click", addCount);
+  resetButton.addEventListener("click", resetGame);
 }
 
 rulesButton.addEventListener("click", showRules);
@@ -20,6 +30,7 @@ rulesButton.addEventListener("click", showRules);
 function showRules() {
   rulesContent.style.display = "flex";
   hitButton.removeEventListener("click", addCount);
+  resetButton.removeEventListener("click", resetGame);
 }
 
 const cards = [
@@ -127,6 +138,7 @@ function showWinner() {
   gameWinner.style.display = "flex";
   rulesButton.removeEventListener("click", showRules);
   hitButton.removeEventListener("click", addCount);
+  resetButton.removeEventListener("click", resetGame);
 }
 
 newGame.addEventListener("click", startNewGame);
@@ -135,6 +147,7 @@ function startNewGame () {
   gameWinner.style.display = "none";
   hitButton.addEventListener("click", addCount);
   rulesButton.addEventListener("click", showRules);
+  resetButton.addEventListener("click", resetGame);
   cardsArray.length = 0;
   counter.textContent = 0;
   cardContainer.innerHTML = "";
