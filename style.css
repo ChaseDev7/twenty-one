@@ -26,7 +26,7 @@ body {
   background-color: rgb(47, 45, 45);
   border-radius: 0 0 25px 25px;
   padding: 5px 10px;
-  width: 125px;
+  width: 150px;
   display: flex;
   justify-content: space-evenly;
   border: 0;
@@ -85,6 +85,12 @@ body {
   cursor: pointer;
 }
 
+#winning-message {
+  cursor: pointer;
+  font-size: 30px;
+  font-family: 'Rowdies', cursive;
+}
+
 #new-game-button {
   display: flex;
   border: 1px solid black;
@@ -94,6 +100,8 @@ body {
   margin: 20px;
   color: white;
   cursor: pointer;
+  font-size: 20px;
+  font-family: 'Rowdies', cursive;
 }
 
 #table {
@@ -104,8 +112,8 @@ body {
 }
 
 .card {
-  display: none;
   position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -113,30 +121,31 @@ body {
   width: 70px;
   border-radius: 10px;
   cursor: pointer;
+  margin: 0px 2px;
 }
 
-#top-left-number {
+.top-left-number {
   top: 4px;
   left: 4px;
 }
 
-#center-number {
+.center-number {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
   width: 40px;
-  height: 60px;
+  height: 55px;
   font-size: 30px;
   font-weight: bolder;
 }
 
-#bottom-right-number {
+.bottom-right-number {
   bottom: 4px;
   right: 4px;
 }
 
-#top-left-number, #bottom-right-number {
+.top-left-number, .bottom-right-number {
   position: absolute;
   font-weight: bolder;
   font-size: 12px;
@@ -178,6 +187,7 @@ body {
   padding: 30px;
   width: 80%;
   height: 100px;
+  display: flex;
 }
 
 #dealer-container {

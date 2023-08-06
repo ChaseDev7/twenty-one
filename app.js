@@ -1,27 +1,25 @@
 const hitButton = document.querySelector("#hit");
 let counter = document.querySelector("#counter");
 const table = document.querySelector("#table");
-const topLeftNumber = document.querySelector("#top-left-number");
-const centerNumber = document.querySelector("#center-number");
-const bottomRightNumber = document.querySelector("#bottom-right-number");
 const rulesContent = document.querySelector("#rules-content");
 const rulesButton = document.querySelector("#rules");
 const rulesClose = document.querySelector("#rules-close");
 const gameWinner = document.querySelector("#game-winner");
 const newGame = document.querySelector("#new-game-button");
 const cardContainer = document.querySelector("#card-container");
- const card = document.querySelector(".card");
 
 rulesClose.addEventListener("click", closeRules);
 
 function closeRules() {
   rulesContent.style.display = "none";
+  hitButton.addEventListener("click", addCount);
 }
 
 rulesButton.addEventListener("click", showRules);
 
 function showRules() {
   rulesContent.style.display = "flex";
+  hitButton.removeEventListener("click", addCount);
 }
 
 const cards = [
@@ -84,22 +82,38 @@ const cardsArray = [];
 hitButton.addEventListener("click", addCount);
 
 function addCard () {
-  
+  const newCard = cards[(Math.floor(Math.random() * cards.length))];
+  counter.textContent = 0;
+  cardsArray.push(newCard);
+  cardContainer.innerHTML = "";
+  let cardCount = 0;
+
+  for (let i = 0; i < cardsArray.length; i++) {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("id", cardCount++);
+    let topLeftNumber = document.createElement("div");
+    topLeftNumber.classList.add("top-left-number")
+    let centerNumber = document.createElement("div");
+    centerNumber.classList.add("center-number");
+    let bottomRightNumber = document.createElement("div");
+    bottomRightNumber.classList.add("bottom-right-number");
+    topLeftNumber.textContent = cardsArray[i].name;
+    centerNumber.textContent = cardsArray[i].name;
+    bottomRightNumber.textContent = cardsArray[i].name;
+    card.appendChild(topLeftNumber);
+    card.appendChild(centerNumber);
+    card.appendChild(bottomRightNumber);
+    cardContainer.append(card);
+  };
 }
 
 function addCount() {
-  const newCard = cards[(Math.floor(Math.random() * cards.length))];
-  counter.textContent = 0;
-  card.style.display = "flex";
-  cardsArray.push(newCard.value);
-
-  topLeftNumber.textContent = newCard.name;
-  centerNumber.textContent = newCard.name;
-  bottomRightNumber.textContent = newCard.name;
+  addCard();
   
   let total = 0;
   for (let i of cardsArray) {
-    total += i;
+    total += i.value;
   }
 
   counter.textContent = total;
@@ -111,7 +125,7 @@ function addCount() {
 
 function showWinner() {
   gameWinner.style.display = "flex";
-  rulesButton.removeEventListener;
+  rulesButton.removeEventListener("click", showRules);
   hitButton.removeEventListener("click", addCount);
 }
 
@@ -120,7 +134,8 @@ newGame.addEventListener("click", startNewGame);
 function startNewGame () {
   gameWinner.style.display = "none";
   hitButton.addEventListener("click", addCount);
+  rulesButton.addEventListener("click", showRules);
   cardsArray.length = 0;
   counter.textContent = 0;
-  card.style.display = "none";
+  cardContainer.innerHTML = "";
 }
