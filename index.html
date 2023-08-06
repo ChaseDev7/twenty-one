@@ -5,29 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Twenty One</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@400;700&display=swap" rel="stylesheet">
   <script src="app.js" defer></script>
 </head>
 <body>
   <div id="rules-content">
-    <div id="rules-close">Close</div>
+    <div id="rules-close">CLOSE</div>
     <p>The goal of the game is to get as close to 21 without going over.</p>
-    <p>ACE (A) equals 1 in this game.</p>
   </div>
-  <div id="game-winner"></div>
+  <div id="game-winner">
+    <p id="winning-message">GAME OVER!</p>
+    <button id="new-game-button">NEW GAME</button>
+  </div>
   <div id="container">
     <div id="header">
       <div id="count-box">
         <div id="count">COUNT</div>
         <div id="counter">0</div>
       </div>
-      <button id="hit">HIT</button>
+      <button id="hit">HiT</button>
       <button id="rules">RULES</button>
     </div>
     <div id="table">
-      <div class="card">
-        <div id="top-left-number"></div>
-        <div id="center-number"></div>
-        <div id="bottom-right-number"></div>
+      <div id="dealer-container">
+
+      </div>
+      <div id="card-container">
+        <div class="card">
+          <div id="top-left-number"></div>
+          <div id="center-number"></div>
+          <div id="bottom-right-number"></div>
+        </div>
       </div>
     </div>
   </div>

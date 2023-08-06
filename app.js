@@ -1,7 +1,6 @@
 const hitButton = document.querySelector("#hit");
 let counter = document.querySelector("#counter");
 const table = document.querySelector("#table");
-const card = document.querySelector(".card");
 const topLeftNumber = document.querySelector("#top-left-number");
 const centerNumber = document.querySelector("#center-number");
 const bottomRightNumber = document.querySelector("#bottom-right-number");
@@ -9,6 +8,9 @@ const rulesContent = document.querySelector("#rules-content");
 const rulesButton = document.querySelector("#rules");
 const rulesClose = document.querySelector("#rules-close");
 const gameWinner = document.querySelector("#game-winner");
+const newGame = document.querySelector("#new-game-button");
+const cardContainer = document.querySelector("#card-container");
+ const card = document.querySelector(".card");
 
 rulesClose.addEventListener("click", closeRules);
 
@@ -20,13 +22,6 @@ rulesButton.addEventListener("click", showRules);
 
 function showRules() {
   rulesContent.style.display = "flex";
-}
-
-function showWinner() {
-  gameWinner.style.display = "flex";
-  const winningMessage = document.createElement("p");
-  winningMessage.textContent = "Game Over!";
-  gameWinner.appendChild(winningMessage);
 }
 
 const cards = [
@@ -88,6 +83,10 @@ const cardsArray = [];
 
 hitButton.addEventListener("click", addCount);
 
+function addCard () {
+  
+}
+
 function addCount() {
   const newCard = cards[(Math.floor(Math.random() * cards.length))];
   counter.textContent = 0;
@@ -108,4 +107,20 @@ function addCount() {
   if (total > 21) {
     showWinner();
   }
+}
+
+function showWinner() {
+  gameWinner.style.display = "flex";
+  rulesButton.removeEventListener;
+  hitButton.removeEventListener("click", addCount);
+}
+
+newGame.addEventListener("click", startNewGame);
+
+function startNewGame () {
+  gameWinner.style.display = "none";
+  hitButton.addEventListener("click", addCount);
+  cardsArray.length = 0;
+  counter.textContent = 0;
+  card.style.display = "none";
 }
