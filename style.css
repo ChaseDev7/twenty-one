@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(204, 200, 200);
+  background-color: rgb(25, 110, 25);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -22,7 +22,6 @@ h1 {
   width: 700px;
   height: 100vh;
   position: relative;
-  background-color: rgb(25, 110, 25);
 }
 
 #header {
@@ -290,4 +289,54 @@ h1 {
   height: 100px;
   margin-bottom: 50px;
   display: flex;
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 23px;
+    width: 70%;
+  }
+
+  #dealer-container, #card-container {
+    width: 70%;
+  }
+
+  #dealer-count-box, #count-box {
+    height: 20px;
+    width: 145px;
+  }
+
+  #counter, #dealer-counter {
+    font-size: 20px;
+  }
+
+  #count, #dealer-count {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  #hit {
+    font-size: 17px;
+    padding: 3px 0;
+    width: 50px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  #reset, #rules {
+    font-size: 17px;
+    padding: 3px 0;
+    width: 70px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  #stay {
+    font-size: 17px;
+    padding: 3px 0;
+    width: 57px;
+    height: 30px;
+    margin: 0 10px;
+  }
 }
